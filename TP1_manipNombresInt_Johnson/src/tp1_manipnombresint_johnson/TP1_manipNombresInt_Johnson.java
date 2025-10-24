@@ -18,18 +18,35 @@ public class TP1_manipNombresInt_Johnson {
     public static void main(String[] args) {
          Scanner scanner = new Scanner(System.in);
 
-        // Demande du premier entier
+        
         System.out.print("Entrez le premier entier : ");
-        int nombre1 = scanner.nextInt();
+        double nombre1 = scanner.nextInt();
 
-        // Demande du deuxième entier
+        
         System.out.print("Entrez le deuxième entier : ");
-        int nombre2 = scanner.nextInt();
+        double nombre2 = scanner.nextInt();
 
-        // Affichage des deux entiers saisis
+        
         System.out.println("Vous avez entré : " + nombre1 + " et " + nombre2);
+        
+        double somme= nombre1 + nombre2;
+        double produit= nombre1 * nombre2;
+        double quotient= nombre2/nombre1;
+        
+        System.out.println("la somme est :"+somme);
+        
+        double difference = nombre2 - nombre1;
+        System.out.println("la difference est :"+difference);
+        
+         System.out.println("le produit est :"+produit);
+         System.out.println("le quotient est :"+ quotient);
+         
+         
+        
+        
+      
 
-        // Fermeture du Scanner (bonne pratique)
+        
         scanner.close();
     }
 }
