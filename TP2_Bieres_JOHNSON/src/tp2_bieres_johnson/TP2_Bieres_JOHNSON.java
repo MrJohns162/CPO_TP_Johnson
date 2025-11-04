@@ -14,11 +14,16 @@ public class TP2_Bieres_JOHNSON {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        BouteilleBiere uneBiere = new BouteilleBiere() ;
-        uneBiere.nom = "Cuvée des trolls"; 
-        uneBiere.degreAlcool = 7.0 ;
-        uneBiere.brasserie = "Dubuisson"; 
-        uneBiere.ouvert = false ; 
+        BouteilleBiere uneBiere = new BouteilleBiere("Cuvée des trolls", 7.0 ,"Dubuisson") ; 
+        uneBiere.lireEtiquette();
+        BouteilleBiere autreBiere = new BouteilleBiere("Leffe",6.6,"Abbaye de Leffe"); 
+        uneBiere.lireEtiquette();
+        BouteilleBiere autreBiere2 = new BouteilleBiere("86",12,"Bar a chicha");
+        uneBiere.lireEtiquette();
+        BouteilleBiere autreBiere3 = new BouteilleBiere("Vodka",18,"quentin aime les enfants");
+        uneBiere.lireEtiquette();
+        BouteilleBiere autreBiere4 = new BouteilleBiere("Poliakov",17,"EPF");
+        uneBiere.lireEtiquette();
     }
     
 }
