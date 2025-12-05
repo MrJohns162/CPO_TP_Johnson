@@ -77,18 +77,22 @@ public class Cadenas extends javax.swing.JFrame {
                     up_chiffre_4.setText("/\\");
                         getContentPane().add(up_chiffre_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(386, 48, 97, 49));
 
+                        text_chiffre_0.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
                         text_chiffre_0.setText("0");
                         text_chiffre_0.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
                         getContentPane().add(text_chiffre_0, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 97, 90));
 
+                        text_chiffre_1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
                         text_chiffre_1.setText("0");
                         text_chiffre_1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
                         getContentPane().add(text_chiffre_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 100, 90));
 
+                        text_chiffre_2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
                         text_chiffre_2.setText("0");
                         text_chiffre_2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
                         getContentPane().add(text_chiffre_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 116, 80, 70));
 
+                        text_chiffre_3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
                         text_chiffre_3.setText("0");
                         text_chiffre_3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
                         getContentPane().add(text_chiffre_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(388, 116, 100, 80));
