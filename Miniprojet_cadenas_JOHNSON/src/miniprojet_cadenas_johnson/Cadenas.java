@@ -72,6 +72,11 @@ public class Cadenas extends javax.swing.JFrame {
                 getContentPane().add(up_chiffre_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 48, 97, 49));
 
                 up_chiffre_3.setText("/\\");
+                    up_chiffre_3.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                            up_chiffre_3ActionPerformed(evt);
+                        }
+                    });
                     getContentPane().add(up_chiffre_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 48, 97, 49));
 
                     up_chiffre_4.setText("/\\");
@@ -90,7 +95,7 @@ public class Cadenas extends javax.swing.JFrame {
                         text_chiffre_2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
                         text_chiffre_2.setText("0");
                         text_chiffre_2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-                        getContentPane().add(text_chiffre_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 116, 80, 70));
+                        getContentPane().add(text_chiffre_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 116, 90, 80));
 
                         text_chiffre_3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
                         text_chiffre_3.setText("0");
@@ -153,15 +158,46 @@ public class Cadenas extends javax.swing.JFrame {
 
     private void up_chiffre_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_up_chiffre_1ActionPerformed
         // TODO add your handling code here:
+        int chiffre = Integer.parseInt(text_chiffre_0.getText());
+        
+        chiffre++;
+        
+        if (chiffre > 9) {
+        chiffre = 0;
+    }
+        
+         text_chiffre_0.setText(String.valueOf(chiffre));
     }//GEN-LAST:event_up_chiffre_1ActionPerformed
 
     private void up_chiffre_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_up_chiffre_2ActionPerformed
         // TODO add your handling code here:
+        int chiffre = Integer.parseInt(text_chiffre_1.getText());
+        
+        chiffre++;
+        
+        if (chiffre > 9) {
+        chiffre = 0;
+    }
+        
+         text_chiffre_1.setText(String.valueOf(chiffre));
     }//GEN-LAST:event_up_chiffre_2ActionPerformed
 
     private void down_chiffre_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_down_chiffre_4ActionPerformed
         // TODO add your handling code here:
+        int chiffre = Integer.parseInt(text_chiffre_2.getText());
+        
+        chiffre++;
+        
+        if (chiffre > 9) {
+        chiffre = 0;
+    }
+        
+         text_chiffre_2.setText(String.valueOf(chiffre));
     }//GEN-LAST:event_down_chiffre_4ActionPerformed
+
+    private void up_chiffre_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_up_chiffre_3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_up_chiffre_3ActionPerformed
 
     /**
      * @param args the command line arguments
