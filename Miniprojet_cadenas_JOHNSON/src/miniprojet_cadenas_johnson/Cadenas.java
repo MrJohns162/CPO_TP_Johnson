@@ -8,15 +8,21 @@ package miniprojet_cadenas_johnson;
  *
  * @author mathi
  */
+import javax.swing.JOptionPane;
+
 public class Cadenas extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Cadenas.class.getName());
+    private Combinaison combinaisonSecrete;
 
     /**
      * Creates new form Cadenas
      */
     public Cadenas() {
         initComponents();
+         combinaisonSecrete = new Combinaison(); // génère le code
+        int[] debug = combinaisonSecrete.getCode();
+        System.out.println("Code secret : " + debug[0]+debug[1]+debug[2]+debug[3]);
     }
 
     /**
@@ -80,6 +86,11 @@ public class Cadenas extends javax.swing.JFrame {
                     getContentPane().add(up_chiffre_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 48, 97, 49));
 
                     up_chiffre_4.setText("/\\");
+                        up_chiffre_4.addActionListener(new java.awt.event.ActionListener() {
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                up_chiffre_4ActionPerformed(evt);
+                            }
+                        });
                         getContentPane().add(up_chiffre_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(386, 48, 97, 49));
 
                         text_chiffre_0.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -103,12 +114,27 @@ public class Cadenas extends javax.swing.JFrame {
                         getContentPane().add(text_chiffre_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(388, 116, 100, 80));
 
                         down_chiffre_1.setText("\\/");
+                        down_chiffre_1.addActionListener(new java.awt.event.ActionListener() {
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                down_chiffre_1ActionPerformed(evt);
+                            }
+                        });
                         getContentPane().add(down_chiffre_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, -1, -1));
 
                         down_chiffre_2.setText("\\/");
+                        down_chiffre_2.addActionListener(new java.awt.event.ActionListener() {
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                down_chiffre_2ActionPerformed(evt);
+                            }
+                        });
                         getContentPane().add(down_chiffre_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, -1, -1));
 
                         down_chiffre_3.setText("\\/");
+                        down_chiffre_3.addActionListener(new java.awt.event.ActionListener() {
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                down_chiffre_3ActionPerformed(evt);
+                            }
+                        });
                         getContentPane().add(down_chiffre_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, -1, -1));
 
                         down_chiffre_4.setText("\\/");
@@ -148,6 +174,11 @@ public class Cadenas extends javax.swing.JFrame {
                         getContentPane().add(bouton_recommencer, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 400, -1, -1));
 
                         Bouton_tester.setText("Tester");
+                        Bouton_tester.addActionListener(new java.awt.event.ActionListener() {
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                Bouton_testerActionPerformed(evt);
+                            }
+                        });
                         getContentPane().add(Bouton_tester, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 160, -1, -1));
 
                         text_consigne.setText("Trouver le bon code en moins de 5 tentatives");
@@ -184,6 +215,19 @@ public class Cadenas extends javax.swing.JFrame {
 
     private void down_chiffre_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_down_chiffre_4ActionPerformed
         // TODO add your handling code here:
+        int chiffre = Integer.parseInt(text_chiffre_3.getText());
+        
+        chiffre--;
+        
+        if (chiffre<0){
+            chiffre=9;
+        }
+        text_chiffre_3.setText(String.valueOf(chiffre));
+
+    }//GEN-LAST:event_down_chiffre_4ActionPerformed
+
+    private void up_chiffre_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_up_chiffre_3ActionPerformed
+        // TODO add your handling code here:
         int chiffre = Integer.parseInt(text_chiffre_2.getText());
         
         chiffre++;
@@ -193,11 +237,72 @@ public class Cadenas extends javax.swing.JFrame {
     }
         
          text_chiffre_2.setText(String.valueOf(chiffre));
-    }//GEN-LAST:event_down_chiffre_4ActionPerformed
-
-    private void up_chiffre_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_up_chiffre_3ActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_up_chiffre_3ActionPerformed
+
+    private void up_chiffre_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_up_chiffre_4ActionPerformed
+        // TODO add your handling code here:
+        int chiffre = Integer.parseInt(text_chiffre_3.getText());
+        
+        chiffre++;
+        
+        if (chiffre > 9) {
+        chiffre = 0;
+    }
+        
+         text_chiffre_3.setText(String.valueOf(chiffre));
+    }//GEN-LAST:event_up_chiffre_4ActionPerformed
+
+    private void down_chiffre_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_down_chiffre_1ActionPerformed
+        // TODO add your handling code here:
+        int chiffre = Integer.parseInt(text_chiffre_0.getText());
+        
+        chiffre--;
+        
+        if (chiffre<0){
+            chiffre=9;
+        }
+        text_chiffre_0.setText(String.valueOf(chiffre));
+    }//GEN-LAST:event_down_chiffre_1ActionPerformed
+
+    private void down_chiffre_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_down_chiffre_2ActionPerformed
+        // TODO add your handling code here:
+        int chiffre = Integer.parseInt(text_chiffre_1.getText());
+        
+        chiffre--;
+        
+        if (chiffre<0){
+            chiffre=9;
+        }
+        text_chiffre_1.setText(String.valueOf(chiffre));
+    }//GEN-LAST:event_down_chiffre_2ActionPerformed
+
+    private void down_chiffre_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_down_chiffre_3ActionPerformed
+        // TODO add your handling code here:
+        int chiffre = Integer.parseInt(text_chiffre_2.getText());
+        
+        chiffre--;
+        
+        if (chiffre<0){
+            chiffre=9;
+        }
+        text_chiffre_2.setText(String.valueOf(chiffre));
+    }//GEN-LAST:event_down_chiffre_3ActionPerformed
+
+    private void Bouton_testerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bouton_testerActionPerformed
+        // TODO add your handling code here:
+        int[] combinaisonJoueur = new int[4];
+    combinaisonJoueur[0] = Integer.parseInt(text_chiffre_0.getText());
+    combinaisonJoueur[1] = Integer.parseInt(text_chiffre_1.getText());
+    combinaisonJoueur[2] = Integer.parseInt(text_chiffre_2.getText());
+    combinaisonJoueur[3] = Integer.parseInt(text_chiffre_3.getText());
+
+    if (combinaisonSecrete.estCorrecte(combinaisonJoueur)) {
+        JOptionPane.showMessageDialog(this, "✔️ Code correct !");
+    } else {
+        JOptionPane.showMessageDialog(this, "❌ Code incorrect !");
+    }
+        
+    }//GEN-LAST:event_Bouton_testerActionPerformed
 
     /**
      * @param args the command line arguments
@@ -221,6 +326,7 @@ public class Cadenas extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
+        
         java.awt.EventQueue.invokeLater(() -> new Cadenas().setVisible(true));
     }
 
