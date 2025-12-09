@@ -171,6 +171,11 @@ public class Cadenas extends javax.swing.JFrame {
                         getContentPane().add(texte_tentatives, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 300, -1, -1));
 
                         bouton_recommencer.setText("recommencer");
+                        bouton_recommencer.addActionListener(new java.awt.event.ActionListener() {
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                bouton_recommencerActionPerformed(evt);
+                            }
+                        });
                         getContentPane().add(bouton_recommencer, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 400, -1, -1));
 
                         Bouton_tester.setText("Tester");
@@ -301,8 +306,31 @@ public class Cadenas extends javax.swing.JFrame {
     } else {
         JOptionPane.showMessageDialog(this, "❌ Code incorrect !");
     }
+    int[] code = combinaisonSecrete.getCode();
+
+int nbExacts = 0;
+int nbTropHaut = 0;
+int nbTropBas = 0;
+
+for (int i = 0; i < 4; i++) {
+    if (combinaisonJoueur[i] == code[i]) {
+        nbExacts++;
+    } else if (combinaisonJoueur[i] > code[i]) {
+        nbTropHaut++;
+    } else {
+        nbTropBas++;
+    }
+} 
+texte_nb_chiffres_exacts.setText(String.valueOf(nbExacts));
+    texte_nb_chiffres_haut.setText(String.valueOf(nbTropHaut));
+    texte_nb_chiffres_bas.setText(String.valueOf(nbTropBas));
+
         
     }//GEN-LAST:event_Bouton_testerActionPerformed
+
+    private void bouton_recommencerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bouton_recommencerActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bouton_recommencerActionPerformed
 
     /**
      * @param args the command line arguments
