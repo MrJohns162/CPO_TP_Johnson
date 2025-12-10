@@ -14,6 +14,9 @@ public class Cadenas extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Cadenas.class.getName());
     private Combinaison combinaisonSecrete;
+    private int tentatives = 0;
+private final int MAX_TENTATIVES = 5;
+
 
     /**
      * Creates new form Cadenas
@@ -295,6 +298,16 @@ public class Cadenas extends javax.swing.JFrame {
 
     private void Bouton_testerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bouton_testerActionPerformed
         // TODO add your handling code here:
+        // ➤ Vérification limite de tentatives
+    if (tentatives >= MAX_TENTATIVES) {
+        JOptionPane.showMessageDialog(this, "❌ Vous avez utilisé toutes vos tentatives !");
+        return;
+    }
+
+    tentatives++;  
+    texte_score.setText(tentatives + " / " + MAX_TENTATIVES);
+        
+        
         int[] combinaisonJoueur = new int[4];
     combinaisonJoueur[0] = Integer.parseInt(text_chiffre_0.getText());
     combinaisonJoueur[1] = Integer.parseInt(text_chiffre_1.getText());
@@ -324,12 +337,27 @@ for (int i = 0; i < 4; i++) {
 texte_nb_chiffres_exacts.setText(String.valueOf(nbExacts));
     texte_nb_chiffres_haut.setText(String.valueOf(nbTropHaut));
     texte_nb_chiffres_bas.setText(String.valueOf(nbTropBas));
+    
+     if (tentatives >= MAX_TENTATIVES) {
+        JOptionPane.showMessageDialog(this, "🔒 Plus de tentatives ! Le cadenas reste verrouillé.");
+        Bouton_tester.setEnabled(false);
+    }
+    
+    
 
         
     }//GEN-LAST:event_Bouton_testerActionPerformed
 
     private void bouton_recommencerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bouton_recommencerActionPerformed
         // TODO add your handling code here:
+        tentatives = 0;
+    texte_score.setText("0 / 5");
+
+    combinaisonSecrete = new Combinaison(); // nouveau code
+    int[] debug = combinaisonSecrete.getCode();
+    System.out.println("Nouveau code : " + debug[0]+debug[1]+debug[2]+debug[3]);
+
+    Bouton_tester.setEnabled(true);
     }//GEN-LAST:event_bouton_recommencerActionPerformed
 
     /**
